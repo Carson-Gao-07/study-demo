@@ -1,6 +1,9 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
+    <p @click="$store.commit('addCount')">{{$store.state.count}}</p>
+    <hr />
+    <p @click="$store.dispatch('asyncAddCount')">async: {{$store.state.count}}</p>
     <p>
       For a guide and recipes on how to configure / customize this project,<br>
       check out the
