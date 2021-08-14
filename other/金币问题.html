@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+    // 国王将金币作为工资，发放给忠诚的骑士。
+    // 第一天，骑士收到一枚金币；
+    // 之后两天（第二天和第三天），每天收到两枚金币；
+    // 之后三天（第四、五、六天），每天收到三枚金币；
+    // 之后四天（第七、八、九、十天），每天收到四枚金币……；
+    // 这种工资发放模式会一直这样延续下去：
+    // 当连续 $N$ 天每天收到 $N$ 枚金币后，
+    // 骑士会在之后的连续 $N+1$ 天里，每天收到 $N+1$ 枚金币。
+
+    // 现在给出一个日期 $x$，求第一天到第 $x$ 天骑士总共获得的金币数。 
+    function getCoinTotal(n){
+        let s=1;
+        let index=0;
+        let res=0
+        while(n--){
+            if(index<s){
+                res+=s
+                index++
+            }
+            if(index==s){
+                index=0
+                s++
+            }
+        }
+        return res
+    }
+    document.write(getCoinTotal(10))
+    </script>
+</body>
+</html>
