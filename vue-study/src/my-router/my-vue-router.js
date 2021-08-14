@@ -1,7 +1,7 @@
 // 保存Vue全局变量
 let Vue
 
-class KVueRouter {
+class MyVueRouter {
   constructor(options) {
     // 保存new VueRouter()时传进来的options
     this.$options = options
@@ -15,7 +15,7 @@ class KVueRouter {
 }
 
 // 实现静态方法install
-KVueRouter.install = function(_Vue, options) {
+MyVueRouter.install = function(_Vue, options) {
   Vue = _Vue
   console.log(options)
   // 注册$router属性
@@ -59,4 +59,4 @@ KVueRouter.install = function(_Vue, options) {
     },
   })
 }
-export default KVueRouter
+export default MyVueRouter
