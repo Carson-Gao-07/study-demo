@@ -1,0 +1,15 @@
+<div id="app">{{count}}</div>
+<script src="../node_modules/vue/dist/vue.js"></script>
+<script>
+  const app = new Vue({
+    el: "#app",
+    data() {
+      return {
+        count: 1,
+      }
+    },
+  })
+  setInterval(() => {
+    app.count++
+  }, 1000)
+</script>
