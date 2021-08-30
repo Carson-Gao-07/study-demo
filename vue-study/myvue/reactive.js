@@ -1,7 +1,7 @@
 // 对响应式对象进行拦截处理
 function defineReactive(obj, key, val) {
   // 递归处理对象嵌套
-  observe(obj)
+  observe(val)
 
   // 属性拦截
   Object.defineProperty(obj, key, {
