@@ -1,26 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <div id="app">{{count}}</div>
-    <script src="./my-vue.js"></script>
-    <script>
-      const app = new CVue({
-        el: "#app",
-        data() {
-          return {
-            count: 1,
-          }
-        },
-      })
-      setInterval(() => {
-        app.count++
-      }, 1000)
-    </script>
-  </body>
-</html>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+<div id="app">
+  <p>{{count}}</p>
+  <p c-text="count"></p>
+  <p c-html="desc"></p>
+</div>
+<script src="./my-vue.js"></script>
+<script>
+  const app = new CVue({
+    el: "#app",
+    data() {
+      return {
+        count: 1,
+        desc: "<span style='color:red'>html解析成功</span>",
+      }
+    },
+  })
+  setInterval(() => {
+    app.count++
+  }, 1000)
+</script>
